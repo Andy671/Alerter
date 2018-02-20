@@ -18,6 +18,7 @@ import android.support.v4.view.ViewCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Interpolator;
 
 import java.lang.ref.WeakReference;
 
@@ -456,6 +457,28 @@ public final class Alerter {
             getAlert().setDuration(milliseconds);
         }
         return this;
+    }
+
+    /**
+     * Set custom interpolator for Slide In Animation
+     *
+     * @param interpolator Animation interpolator
+     */
+    public void setSlideInInterpolator(Interpolator interpolator){
+        if (getAlert() != null) {
+            getAlert().setSlideInInterpolator(interpolator);
+        }
+    }
+
+    /**
+     * Set custom interpolator for Slide Out Animation
+     *
+     * @param interpolator Animation interpolator
+     */
+    public void setSlideOutInterpolator(Interpolator interpolator){
+        if (getAlert() != null) {
+            getAlert().setSlideOutInterpolator(interpolator);
+        }
     }
 
     /**
