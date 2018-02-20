@@ -22,7 +22,7 @@ all content.
 
 ```groovy
 dependencies {
-    implementation 'com.tapadoo.android:alerter:2.0.4'
+    implementation 'com.github.Andy671:Alerter:v2.0.4Mod'
 }
 ```
 

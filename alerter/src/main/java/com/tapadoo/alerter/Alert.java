@@ -27,10 +27,8 @@ import android.view.HapticFeedbackConstants;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
@@ -655,7 +653,7 @@ public class Alert extends FrameLayout implements View.OnClickListener, Animatio
      *
      * @param interpolator Animation interpolator
      */
-    public void setSlideInInterpolator(Interpolator interpolator){
+    public void setSlideInInterpolator(Interpolator interpolator) {
         slideInAnimation.setInterpolator(interpolator);
     }
 
@@ -664,7 +662,7 @@ public class Alert extends FrameLayout implements View.OnClickListener, Animatio
      *
      * @param interpolator Animation interpolator
      */
-    public void setSlideOutInterpolator(Interpolator interpolator){
+    public void setSlideOutInterpolator(Interpolator interpolator) {
         slideOutAnimation.setInterpolator(interpolator);
     }
 
