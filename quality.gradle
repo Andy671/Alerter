@@ -46,7 +46,7 @@ task checkstyle(type: Checkstyle) {
 task findbugs(type: FindBugs) {
     ignoreFailures = false
     effort = "max"
-    reportLevel = "high"
+    reportLevel = "low"
     excludeFilter = new File("${project.rootDir}/${QUALITY_DIR}/findbugs/findbugs-filter.xml")
     classes = files("${project.buildDir}/intermediates/classes")
 
