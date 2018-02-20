@@ -1,7 +1,7 @@
 //noinspection GrPackage
 apply plugin: 'checkstyle'
-apply plugin: 'findbugs'
-apply plugin: 'pmd'
+//apply plugin: 'findbugs'
+//apply plugin: 'pmd'
 
 def final String QUALITY_DIR       = "quality"
 def final String SOURCE            = "src"
