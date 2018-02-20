@@ -1,11 +1,10 @@
 //noinspection GrPackage
 apply plugin: 'checkstyle'
-//apply plugin: 'findbugs'
-//apply plugin: 'pmd'
+apply plugin: 'pmd'
 
 def final String QUALITY_DIR       = "quality"
 def final String SOURCE            = "src"
-def final String INCLUDE_JAVA      = "**/*.java"
+def final String INCLUDE_JAVA      = ""
 def final String EXCLUDE_GENERATED = "**/gen/**"
 
 android {
@@ -41,39 +40,10 @@ task checkstyle(type: Checkstyle) {
 }
 
 /*
- * Find Bugs -  a program which uses static analysis to look for bugs in Java code.
- */
-task findbugs(type: FindBugs) {
-    ignoreFailures = false
-    effort = "max"
-    reportLevel = "low"
-    excludeFilter = new File("${project.rootDir}/${QUALITY_DIR}/findbugs/findbugs-filter.xml")
-    classes = files("${project.buildDir}/intermediates/classes")
-
-    source SOURCE
-    include INCLUDE_JAVA
-    exclude EXCLUDE_GENERATED
-
-    reports {
-        xml.enabled = false
-        html.enabled = true
-
-        xml {
-            destination new File("$project.buildDir/reports/findbugs/findbugs.xml")
-        }
-        html {
-            destination new File("$project.buildDir/reports/findbugs/findbugs.html")
-        }
-    }
-
-    classpath = files()
-}
-
-/*
  * Programming Mistake Detector - a source code analyzer. It finds common programming flaws.
  */
 task pmd(type: Pmd) {
-    ignoreFailures = false
+    ignoreFailures = true
     ruleSetFiles = files("${project.rootDir}/${QUALITY_DIR}/pmd/pmd-ruleset.xml")
     ruleSets = []
 
@@ -83,7 +53,7 @@ task pmd(type: Pmd) {
 
     reports {
         xml.enabled = false
-        html.enabled = true
+        html.enabled = false
         xml {
             destination new File("$project.buildDir/reports/pmd/pmd.xml")
         }
@@ -95,4 +65,4 @@ task pmd(type: Pmd) {
 
 preBuild.dependsOn('checkstyle')
 
-check.dependsOn 'findbugs', 'pmd', 'lint'
+check.dependsOn  'pmd', 'lint'
