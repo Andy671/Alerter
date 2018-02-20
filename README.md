@@ -7,7 +7,7 @@ I've added Slide In and Slide Out Interpolator option to configure.
 
 ```groovy
 dependencies {
-    implementation 'com.github.Andy671:Alerter:v2.0.4.1M'
+    implementation 'com.github.Andy671:Alerter:v2.0.4.2M'
 }
 ```
 

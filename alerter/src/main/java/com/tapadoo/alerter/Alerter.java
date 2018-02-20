@@ -464,10 +464,11 @@ public final class Alerter {
      *
      * @param interpolator Animation interpolator
      */
-    public void setSlideInInterpolator(Interpolator interpolator) {
+    public Alerter setSlideInInterpolator(Interpolator interpolator) {
         if (getAlert() != null) {
             getAlert().setSlideInInterpolator(interpolator);
         }
+        return this;
     }
 
     /**
@@ -475,10 +476,11 @@ public final class Alerter {
      *
      * @param interpolator Animation interpolator
      */
-    public void setSlideOutInterpolator(Interpolator interpolator) {
+    public Alerter setSlideOutInterpolator(Interpolator interpolator) {
         if (getAlert() != null) {
             getAlert().setSlideOutInterpolator(interpolator);
         }
+        return this;
     }
 
     /**
